@@ -15,7 +15,8 @@ namespace slutproj2PRR2
         {
             Book[] books = new Book[10];
             string playerInput;
-            int playerMoney = 1000;
+            int playerMoney = 0;
+            int indexInt = 0;
 
             for (int i = 0; i < books.Length; i++)
             {
@@ -39,24 +40,36 @@ namespace slutproj2PRR2
                 itemDict.Add(books[i].Name, books[i].Cost);
             }
 
-            System.Console.WriteLine("This are the items we sell:");
             foreach (string key in itemDict.Keys)
             {
-                System.Console.WriteLine("Name: " + key + " | Price: " + itemDict[key]);
+                playerMoney += itemDict.ElementAt(indexInt).Value;
+                indexInt++;
             }
 
-            System.Console.WriteLine("Which do you want to buy?\nType the indexnumber of item");
-            playerInput = Console.ReadLine().Trim();
-
-            int convertedString = StringToInt(playerInput);
-
-            playerMoney -= itemDict.ElementAt(convertedString).Value;
-            itemDict.Remove(itemDict.ElementAt(convertedString).Key);
-
-            foreach (string key in itemDict.Keys)
+            indexInt = 0;
+            while (playerMoney > 0)
             {
-                System.Console.WriteLine("Name: " + key + " | Price: " + itemDict[key]);
+                System.Console.WriteLine("This are the items we sell:");
+                foreach (string key in itemDict.Keys)
+                {
+                    System.Console.WriteLine(indexInt + ": Name: " + key + " | Price: " + itemDict[key]);
+                    indexInt++;
+                }
+
+                indexInt = 0;
+
+                System.Console.WriteLine("Which do you want to buy?\nType the indexnumber of item");
+                System.Console.WriteLine("You have: " + playerMoney + " money left to spend");
+                playerInput = Console.ReadLine().Trim();
+
+                int convertedString = StringToInt(playerInput);
+
+                playerMoney -= itemDict.ElementAt(convertedString).Value;
+                itemDict.Remove(itemDict.ElementAt(convertedString).Key);
+                System.Console.WriteLine("Money left: " + playerMoney);
             }
+
+            System.Console.WriteLine("You are out of money, press ENTER to exit");
 
             Console.ReadLine();
         }
