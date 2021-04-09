@@ -9,6 +9,7 @@ namespace slutproj2PRR2
         private Queue<string> playerNames = new Queue<string>();
         private HashSet<string> playerInputs = new HashSet<string>();
         private Dictionary<string, int> itemDict = new Dictionary<string, int>();
+        
         private Book[] books = new Book[10];
 
         private string playerInput;
@@ -86,18 +87,6 @@ namespace slutproj2PRR2
             }
 
             return result;
-        }
-
-        private Dictionary<string, int> AddToDict()
-        {
-
-            return itemDict;
-        }
-
-        private Queue<string> AddToQueue()
-        {
-            
-            return playerNames;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace slutproj2PRR2
 {
@@ -6,7 +7,30 @@ namespace slutproj2PRR2
     {
         static void Main(string[] args)
         {
+            System.Console.WriteLine("Hello and welcome to the program");
+            System.Console.WriteLine("Currently only the shop is available, but there might be more in the future");
+
+            Load();
+
             Shop shop = new Shop();
+        }
+
+        static void Load()
+        {
+            System.Console.WriteLine();
+            Thread.Sleep(2000);
+            Console.WriteLine("Loading, please wait...");
+
+            string[] dots = new string[5];
+
+            for (int i = 0; i < dots.Length; i++)
+            {
+                dots[i] = ".";
+                Console.WriteLine(dots[i]);
+                Thread.Sleep(500);
+            }
+
+            Console.Clear();
         }
     }
 }
