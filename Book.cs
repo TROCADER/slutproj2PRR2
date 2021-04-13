@@ -6,8 +6,10 @@ namespace slutproj2PRR2
     {
         public Book(string playerInput)
         {
-            Cost = random.Next(1, 101);
+            Cost = random.Next(21, 101);
             Name = playerInput;
+
+            TypeOf = "Book";
         }
     }
 }

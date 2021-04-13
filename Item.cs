@@ -7,7 +7,21 @@ namespace slutproj2PRR2
         public int Cost {get; set;}
         public string Name {get; set;}
         public int Name2 {get; set;}
-        protected string playerInputItem;
+
+        private string typeOf = "";
+
+        public string TypeOf
+        {
+            get
+            {
+                return typeOf;
+            }
+
+            set
+            {
+                typeOf = value;
+            }
+        }
 
         public Item()
         {

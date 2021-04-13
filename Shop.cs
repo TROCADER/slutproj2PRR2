@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,12 @@ namespace slutproj2PRR2
     public class Shop : Extra
     {
         private Queue<string> playerNames = new Queue<string>();
+        private Queue<string> typeOfQueue = new Queue<string>();
         private HashSet<string> playerInputs = new HashSet<string>();
         private Dictionary<string, int> itemDict = new Dictionary<string, int>();
-        
+
         private Book[] books = new Book[10];
+        private Potion[] potions = new Potion[10];
 
         private string playerInput;
         private int playerMoney = 0;
@@ -19,9 +22,9 @@ namespace slutproj2PRR2
 
         public Shop()
         {
-            for (int i = 0; i < books.Length; i++)
+            for (int i = 0; i < books.Length + potions.Length; i++)
             {
-                System.Console.WriteLine("What should be the name of the book");
+                System.Console.WriteLine("What should be the name of the item?");
                 playerInput = Console.ReadLine().Trim();
 
                 while (playerInput == "" || playerInputs.Contains(playerInput))
@@ -37,8 +40,15 @@ namespace slutproj2PRR2
             for (int i = 0; i < books.Length; i++)
             {
                 books[i] = new Book(playerNames.Dequeue());
-
                 itemDict.Add(books[i].Name, books[i].Cost);
+                typeOfQueue.Enqueue(books[i].TypeOf);
+            }
+
+            for (int i = 0; i < potions.Length; i++)
+            {
+                potions[i] = new Potion(playerNames.Dequeue());
+                itemDict.Add(potions[i].Name, potions[i].Cost);
+                typeOfQueue.Enqueue(potions[i].TypeOf);
             }
 
             foreach (string key in itemDict.Keys)
@@ -53,7 +63,7 @@ namespace slutproj2PRR2
                 System.Console.WriteLine("This are the items we sell:");
                 foreach (string key in itemDict.Keys)
                 {
-                    System.Console.WriteLine(indexInt + ": Name: " + key + " | Price: " + itemDict[key]);
+                    System.Console.WriteLine(typeOfQueue.Dequeue() + ": " + indexInt + ": Name: " + key + " | Price: " + itemDict[key]);
                     indexInt++;
                 }
 

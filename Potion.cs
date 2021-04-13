@@ -6,8 +6,10 @@ namespace slutproj2PRR2
     {
         public Potion(string playerInput)
         {
-            Cost = random.Next(1, 101);
+            Cost = random.Next(1, 51);
             Name = playerInput;
+
+            TypeOf = "Potion";
         }
     }
 }

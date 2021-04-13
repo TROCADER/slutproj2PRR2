@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Collections.Generic;
 
 namespace slutproj2PRR2
 {
@@ -11,6 +12,8 @@ namespace slutproj2PRR2
             System.Console.WriteLine("Currently only the shop is available, but there might be more in the future");
 
             Load();
+
+            
 
             Shop shop = new Shop();
         }
