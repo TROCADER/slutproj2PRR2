@@ -2,7 +2,7 @@ using System;
 
 namespace slutproj2PRR2
 {
-    public class Book : Item
+    public class Book : Supportive
     {
         public Book(string playerInput)
         {

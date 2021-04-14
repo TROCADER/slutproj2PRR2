@@ -14,6 +14,7 @@ namespace slutproj2PRR2
 
         private Book[] books = new Book[10];
         private Potion[] potions = new Potion[10];
+        private BattleAxe[] battleAxes = new BattleAxe[10];
 
         private string playerInput;
         private int playerMoney = 0;

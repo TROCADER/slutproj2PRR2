@@ -13,8 +13,6 @@ namespace slutproj2PRR2
 
             Load();
 
-            
-
             Shop shop = new Shop();
         }
 

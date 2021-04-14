@@ -6,10 +6,11 @@ namespace slutproj2PRR2
     {
         public int Cost {get; set;}
         public string Name {get; set;}
-        public int Name2 {get; set;}
+        protected int Power {get; set;}
 
-        private string typeOf = "";
+        protected bool deadly;
 
+        private string typeOf;
         public string TypeOf
         {
             get
