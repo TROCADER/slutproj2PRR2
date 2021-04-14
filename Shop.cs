@@ -11,10 +11,11 @@ namespace slutproj2PRR2
         private Queue<string> typeOfQueue = new Queue<string>();
         private HashSet<string> playerInputs = new HashSet<string>();
         private Dictionary<string, int> itemDict = new Dictionary<string, int>();
+        private Dictionary<bool, int> testDict = new Dictionary<bool, int>();
 
-        private Book[] books = new Book[10];
-        private Potion[] potions = new Potion[10];
-        private BattleAxe[] battleAxes = new BattleAxe[10];
+        private Book[] books = new Book[3];
+        private Potion[] potions = new Potion[3];
+        private BattleAxe[] battleAxes = new BattleAxe[3];
 
         private string playerInput;
         private int playerMoney = 0;
@@ -50,6 +51,17 @@ namespace slutproj2PRR2
                 potions[i] = new Potion(playerNames.Dequeue());
                 itemDict.Add(potions[i].Name, potions[i].Cost);
                 typeOfQueue.Enqueue(potions[i].TypeOf);
+            }
+
+            for (int i = 0; i < battleAxes.Length; i++)
+            {
+                battleAxes[i] = new BattleAxe();
+
+                // För närvarande skapar krash när den läggs till i dictionaryt
+                // --> Resten funkar
+                // itemDict.Add(battleAxes[i].Name, battleAxes[i].Cost);
+
+                typeOfQueue.Enqueue(battleAxes[i].TypeOf);
             }
 
             foreach (string key in itemDict.Keys)

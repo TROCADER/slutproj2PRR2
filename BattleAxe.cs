@@ -15,7 +15,6 @@ namespace slutproj2PRR2
                 System.Console.WriteLine("This weapon is special, and the cost of the item is increased");
 
                 Cost *= (int)1.2;
-                
             }
         }
     }

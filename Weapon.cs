@@ -13,6 +13,8 @@ namespace slutproj2PRR2
             Cost = random.Next(50, 101);
             Power = random.Next(20, 31);
 
+            TypeOf = "weapon";
+
             if (random.Next(0, 2) == 2)
             {
                 isSpecial = true;
