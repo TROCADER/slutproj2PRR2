@@ -59,7 +59,7 @@ namespace slutproj2PRR2
 
                 // För närvarande skapar krash när den läggs till i dictionaryt
                 // --> Resten funkar
-                // itemDict.Add(battleAxes[i].Name, battleAxes[i].Cost);
+                itemDict.Add(battleAxes[i].Name, battleAxes[i].Cost);
 
                 typeOfQueue.Enqueue(battleAxes[i].TypeOf);
             }
