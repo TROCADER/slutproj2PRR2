@@ -3,7 +3,7 @@
 
 [x] Koden har klasser med arv
 [x] Koden har klasser med arv i 2+ steg eller 2+ hierarkier
-[ ] Koden har klasser med arv i 2+ steg OCH 2+ hierarkier
+[x] Koden har klasser med arv i 2+ steg OCH 2+ hierarkier
 
 [x] Två olika generiska klasser används
 [x] Tre olika, eller minst en egenskapad generisk klass används

@@ -8,12 +8,9 @@ namespace slutproj2PRR2
 
         public Weapon()
         {
-            deadly = true;
-
             Cost = random.Next(50, 101);
-            Power = random.Next(20, 31);
 
-            TypeOf = "weapon";
+            TypeOf = "Weapon";
 
             if (random.Next(0, 2) == 2)
             {

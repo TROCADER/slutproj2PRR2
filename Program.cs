@@ -33,5 +33,19 @@ namespace slutproj2PRR2
 
             Console.Clear();
         }
+
+        public static int StringToInt(string playerInput)
+        {
+            int result = 0;
+            bool sucess = int.TryParse(playerInput, out result);
+
+            while (sucess != true)
+            {
+                playerInput = Console.ReadLine().Trim();
+                sucess = int.TryParse(playerInput, out result);
+            }
+
+            return result;
+        }
     }
 }

@@ -10,7 +10,6 @@ namespace slutproj2PRR2
         private Queue<string> playerNames = new Queue<string>();
         private Queue<string> typeOfQueue = new Queue<string>();
         private HashSet<string> playerInputs = new HashSet<string>();
-        private HashSet<int> axeNameHashSet = new HashSet<int>();
         private Dictionary<string, int> itemDict = new Dictionary<string, int>();
         private Dictionary<bool, int> testDict = new Dictionary<bool, int>();
 
@@ -25,7 +24,7 @@ namespace slutproj2PRR2
 
         public Shop()
         {
-            for (int i = 0; i < books.Length + potions.Length; i++)
+            for (int i = 0; i < books.Length; i++)
             {
                 System.Console.WriteLine("What should be the name of the item?");
                 playerInput = Console.ReadLine().Trim();
@@ -49,7 +48,7 @@ namespace slutproj2PRR2
 
             for (int i = 0; i < potions.Length; i++)
             {
-                potions[i] = new Potion(playerNames.Dequeue());
+                potions[i] = new Potion();
                 itemDict.Add(potions[i].Name, potions[i].Cost);
                 typeOfQueue.Enqueue(potions[i].TypeOf);
             }
@@ -57,11 +56,7 @@ namespace slutproj2PRR2
             for (int i = 0; i < battleAxes.Length; i++)
             {
                 battleAxes[i] = new BattleAxe();
-
-                // För närvarande skapar krash när den läggs till i dictionaryt
-                // --> Resten funkar
                 itemDict.Add(battleAxes[i].Name, battleAxes[i].Cost);
-
                 typeOfQueue.Enqueue(battleAxes[i].TypeOf);
             }
 
@@ -87,7 +82,7 @@ namespace slutproj2PRR2
                 System.Console.WriteLine("You have: " + playerMoney + " money left to spend");
                 playerInput = Console.ReadLine().Trim();
 
-                convertedString = StringToInt(playerInput);
+                convertedString = Program.StringToInt(playerInput);
 
                 playerMoney -= itemDict.ElementAt(convertedString).Value;
                 itemDict.Remove(itemDict.ElementAt(convertedString).Key);
@@ -97,20 +92,6 @@ namespace slutproj2PRR2
             System.Console.WriteLine("You are out of money, press ENTER to exit");
 
             Console.ReadLine();
-        }
-
-        private int StringToInt(string playerInput)
-        {
-            int result = 0;
-            bool sucess = int.TryParse(playerInput, out result);
-
-            while (sucess != true)
-            {
-                playerInput = Console.ReadLine().Trim();
-                sucess = int.TryParse(playerInput, out result);
-            }
-
-            return result;
         }
     }
 }
