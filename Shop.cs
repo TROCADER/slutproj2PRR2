@@ -26,7 +26,7 @@ namespace slutproj2PRR2
         {
             for (int i = 0; i < books.Length; i++)
             {
-                System.Console.WriteLine("What should be the name of the item?");
+                System.Console.WriteLine("What should be the name of the book?\nAll other items will have a random name.");
                 playerInput = Console.ReadLine().Trim();
 
                 while (playerInput == "" || playerInputs.Contains(playerInput))
@@ -65,27 +65,40 @@ namespace slutproj2PRR2
                 playerMoney += itemDict.ElementAt(indexInt).Value;
                 indexInt++;
             }
+            
+            List<string> typeOfList = typeOfQueue.ToList();
 
             indexInt = 0;
             while (playerMoney > 0)
             {
+                Console.Clear();
                 System.Console.WriteLine("This are the items we sell:");
                 foreach (string key in itemDict.Keys)
                 {
-                    System.Console.WriteLine(typeOfQueue.Dequeue() + ": " + indexInt + ": Name: " + key + " | Price: " + itemDict[key]);
+                    System.Console.WriteLine(typeOfList[indexInt] + ": " + indexInt + ": Name: " + key + " | Price: " + itemDict[key]);
                     indexInt++;
                 }
-
                 indexInt = 0;
 
                 System.Console.WriteLine("Which do you want to buy?\nType the indexnumber of item");
                 System.Console.WriteLine("You have: " + playerMoney + " money left to spend");
+                
                 playerInput = Console.ReadLine().Trim();
-
                 convertedString = Program.StringToInt(playerInput);
+
+                // Märkte att den räknar antalet Keys i ett dictionay från 1, istället för 0 som vid indexering, vilket är logiskt
+                // --> för att göra så att man inte indexerar utanför alla Keys så kollar jag med 1 mindre i värde (som vid indexering)
+                if (convertedString > itemDict.Count-1)
+                {
+                    System.Console.WriteLine("You have entered an index that does not exist. Please try again.");
+
+                    playerInput = Console.ReadLine().Trim();
+                    convertedString = Program.StringToInt(playerInput);
+                }
 
                 playerMoney -= itemDict.ElementAt(convertedString).Value;
                 itemDict.Remove(itemDict.ElementAt(convertedString).Key);
+                typeOfList.RemoveAt(convertedString);
                 System.Console.WriteLine("Money left: " + playerMoney);
             }
 

@@ -5,22 +5,17 @@ namespace slutproj2PRR2
 {
     public class Supportive : Item
     {
-        private string[] randomType = new string[10];
-
         public Supportive()
-        {
-            for (int i = 0; i < randomType.Length; i++)
-            {
-                randomType[i] = i.ToString();
-
-            }
-            
-            Name = RandomString(randomType.Length);
+        {         
+            Name = RandomString(10);
         }
 
+        // Hittade denna på stackoverflow
+        // --> genererar en random string utifrån bokstäverna som står listade i chars stringen
+        // --> går enkelt att ändra
         public string RandomString(int length)
         {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
