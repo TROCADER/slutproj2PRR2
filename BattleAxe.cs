@@ -7,13 +7,13 @@ namespace slutproj2PRR2
         private string[] randomNames = new string[100];
 
         public BattleAxe()
-        {
-            Name = randomNames[random.Next(0, randomNames.Length)];
-
+        {            
             for (int i = 0; i < randomNames.Length; i++)
             {
-                // randomNames[i] = i;
+                randomNames[i] = "Axe " + i;
             }
+
+            Name = randomNames[random.Next(0, randomNames.Length)];
 
             if (isSpecial == true)
             {

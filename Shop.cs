@@ -10,6 +10,7 @@ namespace slutproj2PRR2
         private Queue<string> playerNames = new Queue<string>();
         private Queue<string> typeOfQueue = new Queue<string>();
         private HashSet<string> playerInputs = new HashSet<string>();
+        private HashSet<int> axeNameHashSet = new HashSet<int>();
         private Dictionary<string, int> itemDict = new Dictionary<string, int>();
         private Dictionary<bool, int> testDict = new Dictionary<bool, int>();
 
