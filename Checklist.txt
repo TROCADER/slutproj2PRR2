@@ -19,3 +19,5 @@
 [x] Programmet är stabilt och hanterar något fall av oväntad användar-input som kunnat skapa krasch
 [ ] Programmet är större, består av flera delar, har flera komplexa algoritmer och strukturer
 [ ] I princip all logik ligger utanför Main, majoriteten inte i statiska metoder.
+
+[ ] EXTRA (om jag har tid): Tuples (Dictionary som håller en string och en int tuple)

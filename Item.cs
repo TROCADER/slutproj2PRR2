@@ -1,3 +1,5 @@
+using System.Linq.Expressions;
+using System.Collections.Generic;
 using System;
 
 namespace slutproj2PRR2
@@ -10,8 +12,6 @@ namespace slutproj2PRR2
         
         public int IncreaseCost(int a)
         {
-
-
             return Cost;
         }
     }

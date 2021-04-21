@@ -11,7 +11,7 @@ namespace slutproj2PRR2
         private Queue<string> typeOfQueue = new Queue<string>();
         private HashSet<string> playerInputs = new HashSet<string>();
         private Dictionary<string, int> itemDict = new Dictionary<string, int>();
-        private Dictionary<bool, int> testDict = new Dictionary<bool, int>();
+        private List<string> itemsOwned = new List<string>();
 
         private Book[] books = new Book[3];
         private Potion[] potions = new Potion[3];
@@ -71,7 +71,7 @@ namespace slutproj2PRR2
             indexInt = 0;
             while (playerMoney > 0)
             {
-                Console.Clear();
+                // Console.Clear();
                 System.Console.WriteLine("This are the items we sell:");
                 foreach (string key in itemDict.Keys)
                 {
@@ -88,7 +88,7 @@ namespace slutproj2PRR2
 
                 // Märkte att den räknar antalet Keys i ett dictionay från 1, istället för 0 som vid indexering, vilket är logiskt
                 // --> för att göra så att man inte indexerar utanför alla Keys så kollar jag med 1 mindre i värde (som vid indexering)
-                if (convertedString > itemDict.Count-1)
+                while (convertedString > itemDict.Count-1)
                 {
                     System.Console.WriteLine("You have entered an index that does not exist. Please try again.");
 
@@ -99,9 +99,17 @@ namespace slutproj2PRR2
                 playerMoney -= itemDict.ElementAt(convertedString).Value;
                 itemDict.Remove(itemDict.ElementAt(convertedString).Key);
                 typeOfList.RemoveAt(convertedString);
+                itemsOwned.Add(itemDict.ElementAt(convertedString).Key);
+
+                for (int i = 0; i < itemsOwned.Count; i++)
+                {
+                    System.Console.WriteLine(itemsOwned[i]);
+                }
+
                 System.Console.WriteLine("Money left: " + playerMoney);
             }
 
+            Console.Clear();
             System.Console.WriteLine("You are out of money, press ENTER to exit");
 
             Console.ReadLine();

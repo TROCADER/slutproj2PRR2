@@ -8,7 +8,6 @@ namespace slutproj2PRR2
 
         public void XpChange(int input)
         {
-
             if (input > 0)
             {
                 Xp += input;
