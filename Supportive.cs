@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace slutproj2PRR2
 {
-    public class Supportive : Item
+    abstract public class Supportive : Item
     {
         public Supportive()
         {         

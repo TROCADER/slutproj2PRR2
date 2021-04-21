@@ -2,7 +2,7 @@ using System;
 
 namespace slutproj2PRR2
 {
-    public class Item : Extra
+    abstract public class Item : Shared
     {
         public int Cost {get; set;}
         public string Name {get; set;}

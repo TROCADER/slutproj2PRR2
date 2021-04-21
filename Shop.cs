@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace slutproj2PRR2
 {
-    public class Shop : Extra
+    public class Shop : Shared
     {
         private Queue<string> playerNames = new Queue<string>();
         private Queue<string> typeOfQueue = new Queue<string>();

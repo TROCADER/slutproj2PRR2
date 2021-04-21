@@ -2,7 +2,7 @@ using System;
 
 namespace slutproj2PRR2
 {
-    public class Extra
+    abstract public class Shared
     {
         protected Random random = new Random();
     }
