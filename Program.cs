@@ -11,9 +11,11 @@ namespace slutproj2PRR2
             System.Console.WriteLine("Hello and welcome to the program");
             System.Console.WriteLine("Currently only the shop is available, but there might be more in the future");
 
-            Load();
+            // Load();
 
             Shop shop = new Shop();
+
+            
         }
 
         static void Load()
