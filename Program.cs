@@ -8,14 +8,16 @@ namespace slutproj2PRR2
     {
         static void Main(string[] args)
         {
-            System.Console.WriteLine("Hello and welcome to the program");
-            System.Console.WriteLine("Currently only the shop is available, but there might be more in the future");
+            // System.Console.WriteLine("Hello and welcome to the program");
+            // System.Console.WriteLine("Currently only the shop is available, but there might be more in the future");
 
             // Load();
 
-            Shop shop = new Shop();
+            // Shop shop = new Shop();
 
-            
+            Action action = new Action();
+
+            Console.ReadLine();
         }
 
         static void Load()

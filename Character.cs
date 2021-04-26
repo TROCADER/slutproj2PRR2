@@ -14,11 +14,9 @@ namespace slutproj2PRR2
             {
                 return hp;
             }
-
             set
             {
                 hp = value;
-
                 if (hp < 0)
                 {
                     hp = 0;
@@ -32,11 +30,9 @@ namespace slutproj2PRR2
             {
                 return hp;
             }
-
             set
             {
                 xp = value;
-
                 if (xp < 0)
                 {
                     xp = 0;
@@ -50,11 +46,9 @@ namespace slutproj2PRR2
             {
                 return lvl;
             }
-
             set
             {
                 lvl = value;
-
                 if (lvl < 1)
                 {                    
                     lvl = 1;
