@@ -4,7 +4,7 @@ namespace slutproj2PRR2
 {
     public class Fighter : Character
     {
-        private int xpToLevelUp;
+        private float xpToLevelUp;
 
         public void XpChange(int input)
         {
@@ -12,7 +12,7 @@ namespace slutproj2PRR2
             {
                 Xp += input;
 
-                Lvl = 1 + Xp / xpToLevelUp;
+                Lvl = (int) (1 + Xp / xpToLevelUp);
                 xpToLevelUp += 1;
             }
 

@@ -45,7 +45,7 @@ namespace slutproj2PRR2
 
             while (sucess != true)
             {
-                System.Console.WriteLine("Du har inte skrivit ett giltigt tal, försök igen.");
+                System.Console.WriteLine("Please enter a number. Try again.");
                 playerInput = Console.ReadLine().Trim();
                 sucess = int.TryParse(playerInput, out result);
             }

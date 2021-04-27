@@ -8,7 +8,7 @@ namespace slutproj2PRR2
         private int xp = 0;
         private int lvl = 1;
 
-        protected int Hp
+        public int Hp
         {
             get
             {
@@ -24,7 +24,7 @@ namespace slutproj2PRR2
             }
         }
 
-        protected int Xp
+        public int Xp
         {
             get
             {
@@ -40,7 +40,7 @@ namespace slutproj2PRR2
             }
         }
 
-        protected int Lvl
+        public int Lvl
         {
             get
             {
@@ -56,7 +56,7 @@ namespace slutproj2PRR2
             }
         }
 
-        protected void TakeDmg(int input)
+        public void TakeDmg(int input)
         {
             hp -= input;
         }
