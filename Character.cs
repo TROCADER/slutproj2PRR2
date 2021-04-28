@@ -8,6 +8,8 @@ namespace slutproj2PRR2
         private int xp = 0;
         private int lvl = 1;
 
+        public bool isDead = false;
+
         public int Hp
         {
             get
@@ -20,6 +22,9 @@ namespace slutproj2PRR2
                 if (hp < 0)
                 {
                     hp = 0;
+
+                    System.Console.WriteLine("Hp less than 0, the character is now declared as dead");
+                    isDead = true;
                 }
             }
         }
@@ -28,7 +33,7 @@ namespace slutproj2PRR2
         {
             get
             {
-                return hp;
+                return xp;
             }
             set
             {
@@ -50,7 +55,7 @@ namespace slutproj2PRR2
             {
                 lvl = value;
                 if (lvl < 1)
-                {                    
+                {
                     lvl = 1;
                 }
             }
@@ -59,6 +64,9 @@ namespace slutproj2PRR2
         public void TakeDmg(int input)
         {
             hp -= input;
+
+            System.Console.WriteLine("The character took some damage\nThe character took: " + input + " damage");
+            System.Console.WriteLine("The chacter has: " + hp + " hp remaining");
         }
     }
 }

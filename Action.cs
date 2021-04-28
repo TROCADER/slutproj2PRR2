@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using System.Collections.Generic;
 
 namespace slutproj2PRR2
@@ -8,11 +9,10 @@ namespace slutproj2PRR2
         private Character fighterCharacter = new Fighter();
 
         private Dictionary<int, string> actions = new Dictionary<int, string>();
-        private List<string> listOfActions = new List<string>() {"Punch", "Kick"};
+        private List<string> listOfActions = new List<string>() { "Punch", "Kick" };
+        private List<string> commonFrases = new List<string>() { "The fighter recieved a ", " and took some damage." };
 
-        private string playerInput;
         private int convertedString;
-        private int xpChange;
 
         public Action()
         {
@@ -21,62 +21,71 @@ namespace slutproj2PRR2
                 actions.Add(i, listOfActions[i]);
             }
 
-            System.Console.WriteLine("These are the things you can choose between:\n");
-
-            foreach (int key in actions.Keys)
+            while (fighterCharacter.isDead == false)
             {
-                Console.WriteLine(key + 1 + ": " + actions[key]);
-            }
+                System.Console.WriteLine("Fighter level: " + fighterCharacter.Lvl);
+                System.Console.WriteLine("Fighter total Xp: " + fighterCharacter.Xp);
 
-            System.Console.WriteLine("To do the desired action, please enter the corresponding index key");
+                System.Console.WriteLine("\nThese are the things you can choose between:\n");
 
-            convertedString = CheckPlayerInput();
+                foreach (int key in actions.Keys)
+                {
+                    Console.WriteLine(key + 1 + ": " + actions[key]);
+                }
 
-            switch (convertedString)
-            {
-                case 1:
-                    PunchAction();
-                    break;
+                System.Console.WriteLine("To do the desired action, please enter the corresponding index key");
+                convertedString = Program.CheckPlayerInput();
 
-                case 2:
-                    KickAction();
-                    break;   
+                switch (convertedString)
+                {
+                    case 1:
+                        PunchAction();
+                        break;
 
-                default:
-                    System.Console.WriteLine("The requested action does not exist...\nPlease try again");
-                    break;
+                    case 2:
+                        KickAction();
+                        break;
+
+                    default:
+                        System.Console.WriteLine("The requested action does not exist...\nPlease try again");
+                        break;
+                }
+
+                Thread.Sleep(3000);
+                Console.Clear();
             }
         }
 
-        private int CheckPlayerInput()
-        {
-            playerInput = Console.ReadLine().Trim();
-            convertedString = Program.StringToInt(playerInput);
 
-            while (convertedString != 1 && convertedString != 2)
-            {
-                System.Console.WriteLine("The chosen action does not exist");
-
-                playerInput = Console.ReadLine().Trim();
-                convertedString = Program.StringToInt(playerInput);
-            }
-
-            return convertedString;
-        }
 
         private void PunchAction()
         {
             System.Console.WriteLine("The fighter recieved a punch and took some damage.");
-            System.Console.WriteLine("Got Xp");
 
-            ((Fighter)fighterCharacter).XpChange(random.Next(10, 16));
-
-            System.Console.WriteLine(fighterCharacter.Xp);
+            RandomizeXp(1, 3, 10, 16);
+            fighterCharacter.TakeDmg(random.Next(1, 10));
         }
 
         private void KickAction()
         {
+            System.Console.WriteLine(commonFrases[0] + "punch" + commonFrases[1]);
 
+        }
+
+        private void RandomizeXp(int randomMin, int randomMax, int xpAmountMin, int xpAmountMax)
+        {
+            if (random.Next(randomMin, randomMax) == 1)
+            {
+                int temp = random.Next(xpAmountMax, xpAmountMax);
+
+                System.Console.WriteLine("The fighter recived Xp\nRecieved: " + temp + " Xp");
+                ((Fighter)fighterCharacter).XpChange(temp);
+            }
+
+            else
+            {
+                System.Console.WriteLine("No Xp gain");
+            }
         }
     }
 }

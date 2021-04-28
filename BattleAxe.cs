@@ -7,7 +7,7 @@ namespace slutproj2PRR2
         private string[] randomNames = new string[100];
 
         public BattleAxe()
-        {            
+        {
             for (int i = 0; i < randomNames.Length; i++)
             {
                 randomNames[i] = "Axe " + i;

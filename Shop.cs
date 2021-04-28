@@ -65,7 +65,7 @@ namespace slutproj2PRR2
                 playerMoney += itemDict.ElementAt(indexInt).Value;
                 indexInt++;
             }
-            
+
             List<string> typeOfList = typeOfQueue.ToList();
 
             indexInt = 0;
@@ -82,13 +82,13 @@ namespace slutproj2PRR2
 
                 System.Console.WriteLine("Which do you want to buy?\nType the indexnumber of item");
                 System.Console.WriteLine("You have: " + playerMoney + " money left to spend");
-                
+
                 playerInput = Console.ReadLine().Trim();
                 convertedString = Program.StringToInt(playerInput);
 
                 // Märkte att den räknar antalet Keys i ett dictionay från 1, istället för 0 som vid indexering, vilket är logiskt
                 // --> för att göra så att man inte indexerar utanför alla Keys så kollar jag med 1 mindre i värde (som vid indexering)
-                while (convertedString > itemDict.Count-1)
+                while (convertedString > itemDict.Count - 1)
                 {
                     System.Console.WriteLine("You have entered an index that does not exist. Please try again.");
 

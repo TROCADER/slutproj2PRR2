@@ -52,5 +52,21 @@ namespace slutproj2PRR2
 
             return result;
         }
+
+        public static int CheckPlayerInput()
+        {
+            string playerInput = Console.ReadLine().Trim();
+            int convertedString = StringToInt(playerInput);
+
+            while (convertedString != 1 && convertedString != 2)
+            {
+                System.Console.WriteLine("The chosen action does not exist");
+
+                playerInput = Console.ReadLine().Trim();
+                convertedString = Program.StringToInt(playerInput);
+            }
+
+            return convertedString;
+        }
     }
 }

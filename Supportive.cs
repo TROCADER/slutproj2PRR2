@@ -6,7 +6,7 @@ namespace slutproj2PRR2
     abstract public class Supportive : Item
     {
         public Supportive()
-        {         
+        {
             Name = RandomString(10);
         }
 
