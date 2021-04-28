@@ -8,19 +8,22 @@ namespace slutproj2PRR2
     {
         static void Main(string[] args)
         {
-            // System.Console.WriteLine("Hello and welcome to the program");
-            // System.Console.WriteLine("Currently only the shop is available, but there might be more in the future");
+            Dictionary<int, string> availableActions = new Dictionary<int, string>();
+            availableActions.Add(1, "Shop");
+            availableActions.Add(2, "Do an action");
 
-            // Load();
+            StartProgram(availableActions);
+
+            // Add player-input here:
 
             // Shop shop = new Shop();
 
-            Action action = new Action();
+            // Action action = new Action();
 
             Console.ReadLine();
         }
 
-        static void Load()
+        private static void Load()
         {
             System.Console.WriteLine();
             Thread.Sleep(2000);
@@ -67,6 +70,18 @@ namespace slutproj2PRR2
             }
 
             return convertedString;
+        }
+
+        private static void StartProgram(Dictionary<int, string> actions)
+        {
+            System.Console.WriteLine("Hello and welcome to the program");
+
+            Load();
+
+            foreach (int key in actions.Keys)
+            {
+                Console.WriteLine(key + 1 + ": " + actions[key]);
+            }
         }
     }
 }
