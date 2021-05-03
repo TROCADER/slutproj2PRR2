@@ -8,17 +8,31 @@ namespace slutproj2PRR2
     {
         static void Main(string[] args)
         {
+            int convertedString;
+
             Dictionary<int, string> availableActions = new Dictionary<int, string>();
             availableActions.Add(1, "Shop");
             availableActions.Add(2, "Do an action");
 
             StartProgram(availableActions);
 
-            // Add player-input here:
+            System.Console.WriteLine("To do the desired action, please enter the corresponding index key");
+            convertedString = Program.CheckPlayerInput();
 
-            // Shop shop = new Shop();
+            switch (convertedString)
+            {
+                case 1:
+                    Shop shop = new Shop();
+                    break;
 
-            // Action action = new Action();
+                case 2:
+                    Action action = new Action();
+                    break;
+
+                default:
+                    System.Console.WriteLine("The desired action does not exist");
+                    break;
+            }
 
             Console.ReadLine();
         }
@@ -80,7 +94,7 @@ namespace slutproj2PRR2
 
             foreach (int key in actions.Keys)
             {
-                Console.WriteLine(key + 1 + ": " + actions[key]);
+                Console.WriteLine(key + ": " + actions[key]);
             }
         }
     }
