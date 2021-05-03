@@ -1,0 +1,175 @@
+<Project>
+  <Name>Slutproj</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Untitled</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Action</Name>
+        <Access>Public</Access>
+        <Location left="95" top="412" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Character fighterCharacter</Member>
+        <Member type="Field">private Dictionary&lt;int, string&gt; actions</Member>
+        <Member type="Field">private List&lt;string&gt; listOfActions</Member>
+        <Member type="Field">private List&lt;string&gt; commonFrases</Member>
+        <Member type="Field">private int convertedString</Member>
+        <Member type="Constructor">public Action()</Member>
+        <Member type="Method">private void PunchAcion()</Member>
+        <Member type="Method">private void RandomizeXp()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Shop</Name>
+        <Access>Public</Access>
+        <Location left="272" top="412" />
+        <Size width="162" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Queue&lt;string&gt; playerNames</Member>
+        <Member type="Field">private Queue&lt;string&gt; typeOfQueue</Member>
+        <Member type="Field">private Hashset&lt;string&gt; playerInputs</Member>
+        <Member type="Field">private Dictionary&lt;string, int&gt; itemDict</Member>
+        <Member type="Field">private List&lt;string&gt; itemsOwned</Member>
+        <Member type="Field">private Book[] books</Member>
+        <Member type="Field">private Potion[] potions</Member>
+        <Member type="Field">private BattleAxe[] battleAxes</Member>
+        <Member type="Field">private string playerInput</Member>
+        <Member type="Field">private int playerMoney</Member>
+        <Member type="Field">private int indexInt</Member>
+        <Member type="Field">private int convertedString</Member>
+        <Member type="Constructor">public Shop()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Fighter</Name>
+        <Access>Public</Access>
+        <Location left="513" top="412" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private float xpToLevelUp</Member>
+        <Member type="Field">private float previousLvl</Member>
+        <Member type="Method">public void XpChange()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Character</Name>
+        <Access>Public</Access>
+        <Location left="513" top="720" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int hp</Member>
+        <Member type="Field">private int xp</Member>
+        <Member type="Field">private int lvl</Member>
+        <Member type="Field">public bool isDead</Member>
+        <Member type="Field">public int Hp</Member>
+        <Member type="Field">public int Xp</Member>
+        <Member type="Field">public int Lvl</Member>
+        <Member type="Method">public void TakeDmg(int input)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BattleAxe</Name>
+        <Access>Public</Access>
+        <Location left="931" top="215" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private string[] randomNames</Member>
+        <Member type="Constructor">public BattleAxe()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Weapon</Name>
+        <Access>Public</Access>
+        <Location left="931" top="488" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">protected bool isSpecial</Member>
+        <Member type="Constructor">public Weapon()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Book</Name>
+        <Access>Public</Access>
+        <Location left="1053" top="767" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Book(string playerInput)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Potion</Name>
+        <Access>Public</Access>
+        <Location left="1243" top="809" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Potion()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Supportive</Name>
+        <Access>Public</Access>
+        <Location left="1013" top="1103" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Supportive()</Member>
+        <Member type="Method">public string RandomString(int length)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Item</Name>
+        <Access>Public</Access>
+        <Location left="821" top="767" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public int Cost</Member>
+        <Member type="Field">public string Name</Member>
+        <Member type="Field">public string TypeOf</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Shared</Name>
+        <Access>Public</Access>
+        <Location left="630" top="1046" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">protected Random random</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="9" second="10">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="8" second="9">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="7" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="6" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="2" second="3">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="3" second="10">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="4" second="5">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="5" second="9">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>

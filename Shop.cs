@@ -71,7 +71,6 @@ namespace slutproj2PRR2
             indexInt = 0;
             while (playerMoney > 0)
             {
-                // Console.Clear();
                 System.Console.WriteLine("This are the items we sell:");
                 foreach (string key in itemDict.Keys)
                 {
@@ -86,9 +85,11 @@ namespace slutproj2PRR2
                 playerInput = Console.ReadLine().Trim();
                 convertedString = Program.StringToInt(playerInput);
 
+                System.Console.WriteLine(itemDict.Count);
+
                 // Märkte att den räknar antalet Keys i ett dictionay från 1, istället för 0 som vid indexering, vilket är logiskt
                 // --> för att göra så att man inte indexerar utanför alla Keys så kollar jag med 1 mindre i värde (som vid indexering)
-                while (convertedString > itemDict.Count - 1)
+                while (convertedString >= itemDict.Count || convertedString < 0)
                 {
                     System.Console.WriteLine("You have entered an index that does not exist. Please try again.");
 
@@ -96,10 +97,11 @@ namespace slutproj2PRR2
                     convertedString = Program.StringToInt(playerInput);
                 }
 
+                // 
                 playerMoney -= itemDict.ElementAt(convertedString).Value;
+                itemsOwned.Add(itemDict.ElementAt(convertedString).Key);
                 itemDict.Remove(itemDict.ElementAt(convertedString).Key);
                 typeOfList.RemoveAt(convertedString);
-                itemsOwned.Add(itemDict.ElementAt(convertedString).Key);
 
                 for (int i = 0; i < itemsOwned.Count; i++)
                 {

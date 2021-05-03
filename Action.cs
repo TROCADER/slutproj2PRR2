@@ -60,7 +60,7 @@ namespace slutproj2PRR2
 
         private void PunchAction()
         {
-            System.Console.WriteLine("The fighter recieved a punch and took some damage.");
+            System.Console.WriteLine(commonFrases[0] + "punch" + commonFrases[1]);
 
             RandomizeXp(1, 3, 10, 16);
             fighterCharacter.TakeDmg(random.Next(1, 10));
@@ -68,8 +68,10 @@ namespace slutproj2PRR2
 
         private void KickAction()
         {
-            System.Console.WriteLine(commonFrases[0] + "punch" + commonFrases[1]);
+            System.Console.WriteLine(commonFrases[0] + "kick" + commonFrases[1]);
 
+            RandomizeXp(1, 5, 15, 20);
+            fighterCharacter.TakeDmg(random.Next(5, 10));
         }
 
         private void RandomizeXp(int randomMin, int randomMax, int xpAmountMin, int xpAmountMax)

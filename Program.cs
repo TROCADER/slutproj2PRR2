@@ -90,7 +90,7 @@ namespace slutproj2PRR2
         {
             System.Console.WriteLine("Hello and welcome to the program");
 
-            Load();
+            // Load();
 
             foreach (int key in actions.Keys)
             {
