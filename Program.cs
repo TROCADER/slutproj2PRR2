@@ -89,8 +89,9 @@ namespace slutproj2PRR2
         private static void StartProgram(Dictionary<int, string> actions)
         {
             System.Console.WriteLine("Hello and welcome to the program");
+            System.Console.WriteLine("The program will now load, please be patient...");
 
-            // Load();
+            Load();
 
             foreach (int key in actions.Keys)
             {

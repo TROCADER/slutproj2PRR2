@@ -7,8 +7,8 @@
       <Entity type="Class">
         <Name>Action</Name>
         <Access>Public</Access>
-        <Location left="95" top="412" />
-        <Size width="162" height="230" />
+        <Location left="66" top="412" />
+        <Size width="185" height="230" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private Character fighterCharacter</Member>
         <Member type="Field">private Dictionary&lt;int, string&gt; actions</Member>
@@ -24,7 +24,7 @@
         <Name>Shop</Name>
         <Access>Public</Access>
         <Location left="272" top="412" />
-        <Size width="162" height="298" />
+        <Size width="194" height="298" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private Queue&lt;string&gt; playerNames</Member>
         <Member type="Field">private Queue&lt;string&gt; typeOfQueue</Member>
@@ -110,7 +110,7 @@
         <Name>Supportive</Name>
         <Access>Public</Access>
         <Location left="1013" top="1103" />
-        <Size width="162" height="216" />
+        <Size width="202" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Constructor">public Supportive()</Member>
         <Member type="Method">public string RandomString(int length)</Member>
@@ -134,6 +134,19 @@
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">protected Random random</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Program</Name>
+        <Access>Public</Access>
+        <Location left="131" top="779" />
+        <Size width="287" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">static void Main(string[] args)</Member>
+        <Member type="Method">private static void Load()</Member>
+        <Member type="Method">public static int StringToInt(string playerInput)</Member>
+        <Member type="Method">public static int CheckPlayerInput()</Member>
+        <Member type="Method">private static void StartProgram(Dictionary&lt;int, string&gt; actions)</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>

@@ -4,6 +4,6 @@ namespace slutproj2PRR2
 {
     abstract public class Shared
     {
-        protected Random random = new Random();
+        public static Random random = new Random();
     }
 }

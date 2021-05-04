@@ -4,8 +4,11 @@ namespace slutproj2PRR2
 {
     public class BattleAxe : Weapon
     {
+        // En string-array som används för att generera ett "namn", vilket är mer av ett ID än ett namn
         private string[] randomNames = new string[100];
 
+        // Konstruktor som genererar namnet samt kontrollerar ifall vapnet är speciellt
+        // --> om den är speciell så blir dess genererade pris högre
         public BattleAxe()
         {
             for (int i = 0; i < randomNames.Length; i++)
@@ -17,8 +20,6 @@ namespace slutproj2PRR2
 
             if (isSpecial == true)
             {
-                System.Console.WriteLine("This weapon is special, and the cost of the item is increased");
-
                 Cost *= (int)1.2;
             }
         }

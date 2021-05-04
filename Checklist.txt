@@ -1,5 +1,5 @@
-[ ] Klassdiagram: Flera steg och flera hierarkier
-[ ] Klassdiagram: arv
+[x] Klassdiagram: Flera steg och flera hierarkier
+[x] Klassdiagram: arv
 
 [x] Koden har klasser med arv
 [x] Koden har klasser med arv i 2+ steg eller 2+ hierarkier
@@ -12,12 +12,12 @@
 
 [x] Try-catch eller tryparse
 
-[ ] Polymorfism
-[ ] Polymorfi finns med
-[ ] Polymorfi används praktiskt
+[X?] Polymorfism
+[X?] Polymorfi finns med
+[x?] Polymorfi används praktiskt
 
 [x] Programmet är stabilt och hanterar något fall av oväntad användar-input som kunnat skapa krasch
-[ ] Programmet är större, består av flera delar, har flera komplexa algoritmer och strukturer
-[ ] I princip all logik ligger utanför Main, majoriteten inte i statiska metoder.
+[x] Programmet är större, består av flera delar, har flera komplexa algoritmer och strukturer
+[x] I princip all logik ligger utanför Main, majoriteten inte i statiska metoder.
 
 [ ] EXTRA (om jag har tid): Tuples (Dictionary som håller en string och en int tuple)
