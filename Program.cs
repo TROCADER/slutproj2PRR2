@@ -7,7 +7,7 @@ namespace slutproj2PRR2
     class Program
     {
         public static Random random = new Random();
-        
+
         static void Main(string[] args)
         {
             int convertedString;
@@ -21,6 +21,7 @@ namespace slutproj2PRR2
             System.Console.WriteLine("To do the desired action, please enter the corresponding index key");
             convertedString = Program.CheckPlayerInput();
 
+            // Behöver inte ha ett default-värde eftersom att jag har kod som säkerställer att den aldrig kommer komma utanför mängden switch-cases
             switch (convertedString)
             {
                 case 1:
@@ -30,33 +31,15 @@ namespace slutproj2PRR2
                 case 2:
                     Action action = new Action();
                     break;
-
-                default:
-                    System.Console.WriteLine("The desired action does not exist");
-                    break;
             }
 
             Console.ReadLine();
         }
-
-        private static void Load()
-        {
-            System.Console.WriteLine();
-            Thread.Sleep(2000);
-            Console.WriteLine("Loading, please wait...");
-
-            string[] dots = new string[5];
-
-            for (int i = 0; i < dots.Length; i++)
-            {
-                dots[i] = ".";
-                Console.WriteLine(dots[i]);
-                Thread.Sleep(500);
-            }
-
-            Console.Clear();
-        }
-
+        
+        // Konverterar en string till en int
+        // --> om den lyckas så returneras stringen
+        // --> om inte så ber den användaren att mata in en ny string
+        // --> detta är då denna metod ska användas för att konvertera en användarinput
         public static int StringToInt(string playerInput)
         {
             int result = 0;
@@ -72,14 +55,19 @@ namespace slutproj2PRR2
             return result;
         }
 
+        // Kollar om användaren har skrivit ne ett giltigt alternativ
+        // --> hämtar användarinput samt använder sig av StringToInt metoden för att konvertera stringen till en int
+        // --> det är int:en som används för att göra kontrollen om användarens input är giltig
         public static int CheckPlayerInput()
         {
             string playerInput = Console.ReadLine().Trim();
             int convertedString = StringToInt(playerInput);
 
+            // Har inte behövt göra koden dynamisk eftersom att alla gånger den referesras till så handlar det om nummren 1 och 2
+            // --> däremot kan jag ändra om så att metoden hämtar in en int-array eller int-lista och därefter kollar med värdena i den
             while (convertedString != 1 && convertedString != 2)
             {
-                System.Console.WriteLine("The chosen action does not exist");
+                System.Console.WriteLine("The chosen action does not exist.\nPlease try again.");
 
                 playerInput = Console.ReadLine().Trim();
                 convertedString = Program.StringToInt(playerInput);
@@ -87,14 +75,12 @@ namespace slutproj2PRR2
 
             return convertedString;
         }
-
+        
+        // Skriver ut alla objekt i ett Dictionary
+        // --> används bara i början, därav namnet StartProgram
+        // Kan inte användas lika väl i butiken då det finns mer information att skriva ut
         private static void StartProgram(Dictionary<int, string> actions)
         {
-            System.Console.WriteLine("Hello and welcome to the program");
-            System.Console.WriteLine("The program will now load, please be patient...");
-
-            Load();
-
             foreach (int key in actions.Keys)
             {
                 Console.WriteLine(key + ": " + actions[key]);

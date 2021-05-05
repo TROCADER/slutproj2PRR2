@@ -28,6 +28,7 @@ namespace slutproj2PRR2
 
             while (fighterCharacter.isDead == false)
             {
+                Console.Clear();
                 System.Console.WriteLine("Fighter level: " + fighterCharacter.Lvl);
                 System.Console.WriteLine("Fighter total Xp: " + fighterCharacter.Xp);
 
@@ -44,15 +45,13 @@ namespace slutproj2PRR2
                 switch (convertedString)
                 {
                     case 1:
+                        Console.Clear();
                         PunchAction();
                         break;
 
                     case 2:
+                        Console.Clear();
                         KickAction();
-                        break;
-
-                    default:
-                        System.Console.WriteLine("The requested action does not exist...\nPlease try again");
                         break;
                 }
 
@@ -85,7 +84,6 @@ namespace slutproj2PRR2
         // --> ansåg att det blir tydligare kod om det är separata int:s istället, så lät det vara kvar med separata int:s
         private void RandomizeXp(int randomMin, int randomMax, int xpAmountMin, int xpAmountMax)
         {
-            
             if (Program.random.Next(randomMin, randomMax) == 1)
             {
                 int temp = Program.random.Next(xpAmountMax, xpAmountMax);
