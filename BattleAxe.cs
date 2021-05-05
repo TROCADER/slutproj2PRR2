@@ -16,7 +16,7 @@ namespace slutproj2PRR2
                 randomNames[i] = "Axe " + i;
             }
 
-            Name = randomNames[random.Next(0, randomNames.Length)];
+            Name = randomNames[Program.random.Next(0, randomNames.Length)];
 
             if (isSpecial == true)
             {

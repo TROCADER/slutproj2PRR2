@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace slutproj2PRR2
 {
-    public class Shop : Shared
+    public class Shop
     {
         // Alla generiska klasser som används av denna klassen
         private Queue<string> playerNames = new Queue<string>();

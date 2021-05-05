@@ -10,11 +10,11 @@ namespace slutproj2PRR2
         // --> "speciell-faktorn" används i vapnets riktiga klass, se BattleAxe för mer information
         public Weapon()
         {
-            Cost = random.Next(50, 101);
+            Cost = Program.random.Next(50, 101);
 
             TypeOf = "Weapon";
 
-            if (random.Next(0, 2) == 2)
+            if (Program.random.Next(0, 2) == 2)
             {
                 isSpecial = true;
             }

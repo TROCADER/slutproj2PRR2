@@ -7,7 +7,7 @@ namespace slutproj2PRR2
         // Genererar ett pris samt deklarerar vad för sorts objekt det är
         public Potion()
         {
-            Cost = random.Next(1, 51);
+            Cost = Program.random.Next(1, 51);
 
             TypeOf = "Potion";
         }

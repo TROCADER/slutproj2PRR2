@@ -2,7 +2,7 @@ using System;
 
 namespace slutproj2PRR2
 {
-    public class Character : Shared
+    public class Character
     {
         // Variabler som denna klass använder sig av
         private int hp = 100;

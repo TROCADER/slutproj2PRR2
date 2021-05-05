@@ -17,7 +17,7 @@ namespace slutproj2PRR2
         {
             string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             return new string(Enumerable.Repeat(chars, length)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
+              .Select(s => s[Program.random.Next(s.Length)]).ToArray());
         }
     }
 }

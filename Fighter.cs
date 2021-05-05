@@ -22,7 +22,7 @@ namespace slutproj2PRR2
 
                     if ((previousLvl - Lvl) >= 1)
                     {
-                        xpToLevelUp += random.Next(1, 6);
+                        xpToLevelUp += Program.random.Next(1, 6);
 
                         System.Console.WriteLine("Character leveled up");
 

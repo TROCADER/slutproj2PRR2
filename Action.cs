@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace slutproj2PRR2
 {
-    public class Action : Shared
+    public class Action
     {
         // Instanserad klass som denna klassen anvönder sig av
         private Character fighterCharacter = new Fighter();
@@ -67,7 +67,7 @@ namespace slutproj2PRR2
             System.Console.WriteLine(commonFrases[0] + "punch" + commonFrases[1]);
 
             RandomizeXp(1, 3, 10, 16);
-            fighterCharacter.TakeDmg(random.Next(1, 10));
+            fighterCharacter.TakeDmg(Program.random.Next(1, 10));
         }
 
         // Ansvarar för all logik som händer när fightern blir sparkad
@@ -76,7 +76,7 @@ namespace slutproj2PRR2
             System.Console.WriteLine(commonFrases[0] + "kick" + commonFrases[1]);
 
             RandomizeXp(1, 5, 15, 20);
-            fighterCharacter.TakeDmg(random.Next(5, 10));
+            fighterCharacter.TakeDmg(Program.random.Next(5, 10));
         }
 
         // Genererar Xp till fightern om den får Xp
@@ -86,9 +86,9 @@ namespace slutproj2PRR2
         private void RandomizeXp(int randomMin, int randomMax, int xpAmountMin, int xpAmountMax)
         {
             
-            if (random.Next(randomMin, randomMax) == 1)
+            if (Program.random.Next(randomMin, randomMax) == 1)
             {
-                int temp = random.Next(xpAmountMax, xpAmountMax);
+                int temp = Program.random.Next(xpAmountMax, xpAmountMax);
 
                 System.Console.WriteLine("The fighter recived Xp\nRecieved: " + temp + " Xp");
                 ((Fighter)fighterCharacter).XpChange(temp);

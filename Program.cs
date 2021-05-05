@@ -6,6 +6,8 @@ namespace slutproj2PRR2
 {
     class Program
     {
+        public static Random random = new Random();
+        
         static void Main(string[] args)
         {
             int convertedString;
