@@ -14,11 +14,11 @@ namespace slutproj2PRR2
 
             Dictionary<int, string> availableActions = new Dictionary<int, string>();
             availableActions.Add(1, "Shop");
-            availableActions.Add(2, "Do an action");
+            availableActions.Add(2, "Fighter");
 
             StartProgram(availableActions);
 
-            System.Console.WriteLine("To do the desired action, please enter the corresponding index key");
+            System.Console.WriteLine("\nTo do the desired action, please enter the corresponding index key");
             convertedString = Program.CheckPlayerInput();
 
             // Behöver inte ha ett default-värde eftersom att jag har kod som säkerställer att den aldrig kommer komma utanför mängden switch-cases
@@ -32,6 +32,7 @@ namespace slutproj2PRR2
                     Action action = new Action();
                     break;
             }
+            System.Console.WriteLine("\nPress ENTER to exit program");
 
             Console.ReadLine();
         }

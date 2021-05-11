@@ -31,6 +31,7 @@ namespace slutproj2PRR2
                 Console.Clear();
                 System.Console.WriteLine("Fighter level: " + fighterCharacter.Lvl);
                 System.Console.WriteLine("Fighter total Xp: " + fighterCharacter.Xp);
+                System.Console.WriteLine("Figther Hp: " + fighterCharacter.Hp);
 
                 System.Console.WriteLine("\nThese are the things you can choose between:\n");
 
@@ -63,18 +64,20 @@ namespace slutproj2PRR2
         // Ansvarar för all logik som händer när fightern blir slagen
         private void PunchAction()
         {
-            System.Console.WriteLine(commonFrases[0] + "punch" + commonFrases[1]);
-
+            System.Console.WriteLine(commonFrases[0] + "punch" + commonFrases[1] + "\n");
+            
             RandomizeXp(1, 3, 10, 16);
+
             fighterCharacter.TakeDmg(Program.random.Next(1, 10));
         }
 
         // Ansvarar för all logik som händer när fightern blir sparkad
         private void KickAction()
         {
-            System.Console.WriteLine(commonFrases[0] + "kick" + commonFrases[1]);
+            System.Console.WriteLine(commonFrases[0] + "kick" + commonFrases[1] + "\n");
 
             RandomizeXp(1, 5, 15, 20);
+
             fighterCharacter.TakeDmg(Program.random.Next(5, 10));
         }
 

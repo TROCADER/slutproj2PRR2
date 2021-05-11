@@ -29,6 +29,8 @@ namespace slutproj2PRR2
         // --> egentligen kanske borde ha splittat denna metod till flera mindre, men den funkar som den är, trots att den är en aning för lång
         public Shop()
         {
+            Console.Clear();
+
             // Spelaren kan skriva in namn till alla böcker
             for (int i = 0; i < books.Length; i++)
             {
@@ -120,19 +122,18 @@ namespace slutproj2PRR2
                 itemDict.Remove(itemDict.ElementAt(convertedString).Key);
                 typeOfList.RemoveAt(convertedString);
 
+                Console.Clear();
+
                 System.Console.WriteLine("Current owned items by name:");
                 for (int i = 0; i < itemsOwned.Count; i++)
                 {
                     System.Console.WriteLine(itemsOwned[i]);
                 }
 
-                System.Console.WriteLine("Money left: " + playerMoney);
+                System.Console.WriteLine("\nMoney left: " + playerMoney);
             }
 
-            Console.Clear();
-            System.Console.WriteLine("You are out of money, press ENTER to exit");
-
-            Console.ReadLine();
+            System.Console.WriteLine("You are out of money");
         }
     }
 }
